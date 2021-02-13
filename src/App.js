@@ -3,6 +3,7 @@ import React from "react"
 function App() {
 // Initialize The state that will hold typing words data and
 const [text,setText] = React.useState("");
+const [count , setCount] = React.useState(0)
 
 function wordCount (e){
  const val = e.target.value;
@@ -25,7 +26,7 @@ console.log(countTheWord())
     <hr/>
     <h5>Time Left: Time</h5> 
     <button  > Start Game!</button>
-    <h5> Word Count</h5>
+    <h5> Word Count : {Count}</h5>
     </div>
   );
 }
