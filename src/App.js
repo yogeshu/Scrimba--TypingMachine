@@ -24,9 +24,9 @@ setTimeout(()=>{
   setTimeLeft(time => time - 1 )
 },
 1000)}
-else if{
+else if(
  end()
-}
+)
   
 },[timeLeft,isTimeRunning])
 function countTheWord(){
