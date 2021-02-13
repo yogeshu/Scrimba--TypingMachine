@@ -4,12 +4,20 @@ function App() {
 // Initialize The state that will hold typing words data and
 const [text,setText] = React.useState("");
 const [count , setCount] = React.useState(0)
-
+const [timeLeft,setTimeLeft] = React.useState(6)
 function wordCount (e){
  const val = e.target.value;
  setText(val)
  console.log(val)
 }
+React.useEffect(()=> {
+  if(timeLeft > 0 ){
+setTimeout(()=>{
+  setTimeLeft(time => time - 1 )
+},
+1000)}
+  
+},[timeLeft])
 function countTheWord(){
  const word = text.trim().split(" ");
  const filterdata = word.filter(word => word !== " ");
@@ -24,9 +32,9 @@ console.log(countTheWord())
     <hr/>
     <textarea onChange={wordCount} value={text} />
     <hr/>
-    <h5>Time Left: Time</h5> 
+    <h5>Time Left: {timeLeft }</h5> 
     <button  > Start Game!</button>
-    <h5> Word Count : {Count}</h5>
+    <h5> Word Count : {count}</h5>
     </div>
   );
 }
