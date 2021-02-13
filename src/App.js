@@ -9,7 +9,12 @@ function wordCount (e){
  setText(val)
  console.log(val)
 }
-
+function countTheWord(){
+ const word = text.trim().split(" ");
+ const filterdata = word.filter(word => word !== " ");
+ return filterdata.length;
+}
+console.log(countTheWord())
   return (
     <div className="App">
     <h1> How Fast You can Type ? 
