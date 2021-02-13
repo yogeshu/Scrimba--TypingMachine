@@ -13,11 +13,11 @@ function wordCount (e){
  console.log(val)
 }
 function start(){
-
+  setTimeRunning(true);
 }
-// function end(){
-//   setTimeRunning(false)
-// }
+function end(){
+  setTimeRunning(false)
+}
 React.useEffect(()=> {
   if( isTimeRunning && timeLeft > 0){
 setTimeout(()=>{
