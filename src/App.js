@@ -41,7 +41,7 @@ console.log(countTheWord())
 
     </h1>
     <hr/>
-    <textarea onChange={wordCount} value={text} />
+    <textarea onChange={wordCount} value={text}  disabled={!isTimeRunning}/>
     <hr/>
     <h5>Time Left: {timeLeft }</h5> 
     <button onClick={start} > Start Game!</button>
