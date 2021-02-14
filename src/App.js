@@ -4,6 +4,7 @@ function App() {
   const START_TIME = 5;
 // Initialize The state that will hold typing words data and
 const [text,setText] = React.useState("");
+const [name,setName] = React.useState("");
 const [startTime, setStartTime] = React.useState(5)
 const [count , setCount] = React.useState(0)
 const [timeLeft,setTimeLeft] = React.useState(startTime);
@@ -17,6 +18,10 @@ function wordCount (e){
 function timel(e){
   const val = e.target.value;
   setStartTime(val);
+}
+function nameChange(e){
+
+  setName(e.target.value);
 }
 function start(){
   setTimeRunning(true);
@@ -50,9 +55,10 @@ console.log(countTheWord())
   return (
     <div className="App">
       
-    <h1> How Fast You can Type ? 
+    <h1> {name} How Fast You can Type ? 
 
     </h1>
+    <h5> Tell me your name : <input type="text" value={name} onChange={nameChange}/></h5>
     <h5> Take How much time You need (in sec ) :  </h5>
      <input type="number" value={startTime} onChange={timel} /> 
     <hr/>
